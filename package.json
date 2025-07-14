@@ -4,14 +4,14 @@
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1"
+    "react-dom": "^18.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "esbuild src/index.js --bundle --servedir=public --outfile=public/bundle.js --loader:.js=jsx",
+    "build": "esbuild src/index.js --bundle --outfile=build/bundle.js --loader:.js=jsx --minify"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.0"
   },
   "browserslist": {
     "production": [
